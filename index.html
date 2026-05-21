@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evuesiri & Olarotimi — Special Form</title>
+  <title>Evuesiri & Olarotimi — White Wedding RSVP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght=300;400;500;600&display=swap" rel="stylesheet" />
@@ -55,7 +55,7 @@
 
     .section-title {
       font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 3.8rem); 
+      font-size: clamp(2.3rem, 5vw, 3.8rem); 
       font-weight: 300;
       color: var(--dark-espresso);
       line-height: 1.2;
@@ -181,6 +181,29 @@
       color: var(--dark-espresso);
     }
 
+    .form-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 3rem 0;
+    }
+
+    .form-divider span {
+      flex: 1;
+      height: 1px;
+      background: rgba(139,111,58,0.25);
+    }
+
+    .form-divider-text {
+      font-family: var(--serif);
+      font-size: 1.15rem; 
+      font-style: italic;
+      color: var(--gold-deep);
+      font-weight: 500;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
     .field-group textarea {
       width: 100%;
       background: #FDFDFB;
@@ -229,69 +252,181 @@
     .field-error { font-size: 0.85rem; font-weight: 600; color: #A03D3D; margin-top: 0.5rem; display: none; }
     .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #FFFFFF; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: middle; margin-right: 10px; }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── INFORMATION SECTION ── */
+    .notes-section {
+      background: var(--bg-ivory-bright); 
+      padding: 6rem 1.5rem 7rem;
+      border-top: 1px solid rgba(139,111,58,0.12);
+    }
+
+    .notes-grid {
+      max-width: 720px;
+      margin: 3.5rem auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .note-card {
+      background: #FFFFFF;
+      padding: 2.5rem 2rem; 
+      border: 1px solid rgba(139,111,58,0.18);
+      border-top: 4px solid var(--gold); 
+    }
+
+    .note-card-eyebrow {
+      font-size: 0.85rem; 
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-deep);
+      margin-bottom: 1rem;
+    }
+
+    .note-card-text {
+      font-family: var(--serif);
+      font-size: 1.3rem; 
+      color: var(--dark-espresso);
+      line-height: 1.7;
+    }
+
+    .footer {
+      background: var(--dark-espresso); 
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .footer-names {
+      font-family: var(--serif);
+      font-size: 1.8rem; 
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem; 
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.4);
+    }
   </style>
 </head>
 <body>
 
   <section class="form-section">
     <div class="section-header">
-      <p class="section-eyebrow">Evuesiri & Olarotimi</p>
-      <h2 class="section-title">Additional <em>Information</em></h2>
-      <p class="section-subtitle">Please fill out the form below to complete your details.</p>
+      <p class="section-eyebrow">Event Location: Warri, Delta State</p> <h2 class="section-title">Evuesiri & Olarotimi <br /><em>White Wedding RSVP</em></h2> <p class="section-subtitle">
+        Date: 3rd October, 2026<br /><br /> Kindly RSVP on or before <strong>31st May, 2026</strong>.<br /><br /> As this is an out-of-state wedding and a strictly by invitation event, your timely response will greatly assist us in planning properly and ensuring all our guests are well taken care of throughout the celebration. </p>
     </div>
 
     <div class="form-card">
       <div class="success-panel" id="successPanel">
         <div class="success-icon">✦</div>
         <p class="success-title">Thank You</p>
-        <p class="success-text">Your preferences have been updated successfully.</p>
+        <p class="success-text">Your response has been saved securely.</p>
       </div>
 
-      <form id="secondForm" novalidate>
+      <form id="whiteWeddingForm" novalidate>
         <div class="field-group">
-          <label for="fullName">Full Name *</label>
-          <input type="text" id="fullName" placeholder="Your full name" required />
+          <label for="fullName">1. Please enter your full name *</label> <input type="text" id="fullName" placeholder="Your answer" required />
           <p class="field-error" id="err-fullName">Please enter your name.</p>
         </div>
 
         <div class="field-group">
-          <label for="phone">Phone Number *</label>
-          <input type="tel" id="phone" placeholder="+234 xxx xxx xxxx" required />
-          <p class="field-error" id="err-phone">Please enter your phone number.</p>
-        </div>
-
-        <div class="field-group">
-          <label>Please Select an Option *</label>
-          <div class="radio-group">
+          <label>2. Will you be attending? *</label> <div class="radio-group">
             <label class="radio-option">
-              <input type="radio" name="selection" value="Option A" required />
-              <span class="radio-label">Option A Gold Suite</span>
+              <input type="radio" name="attendance" value="Absolutely! Let's celebrate" required /> <span class="radio-label">Absolutely! Let's celebrate</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="selection" value="Option B" />
-              <span class="radio-label">Option B Ivory Suite</span>
+              <input type="radio" name="attendance" value="So sad to miss it" /> <span class="radio-label">So sad to miss it</span>
             </label>
           </div>
-          <p class="field-error" id="err-selection">Please select an option.</p>
+          <p class="field-error" id="err-attendance">Please select your attendance status.</p>
         </div>
 
         <div class="field-group">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" placeholder="Any details you'd like to share..."></textarea>
+          <label for="phone">3. If you will be attending, kindly provide your phone number *</label> <input type="tel" id="phone" placeholder="Your answer" required />
+          <p class="field-error" id="err-phone">Please provide a phone number.</p>
+        </div>
+
+        <div class="field-group">
+          <label>4. *For Married Guest Only* Please would you be attending with your spouse?</label> <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="withSpouse" value="Yes, with my spouse" /> <span class="radio-label">Yes, with my spouse</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="withSpouse" value="No, I'll be attending solo" /> <span class="radio-label">No, I'll be attending solo</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>5. Would you like to purchase Asoebi? *</label> <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="asoebi" value="Yes - Male asoebi only" required /> <span class="radio-label">Yes - Male asoebi only</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="asoebi" value="Yes Female asoebi only" /> <span class="radio-label">Yes — Female asoebi only</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="asoebi" value="Yes Both male and female asoebi" /> <span class="radio-label">Yes — Both male and female asoebi</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="asoebi" value="No, thank you" /> <span class="radio-label">No, thank you</span>
+            </label>
+          </div>
+          <p class="field-error" id="err-asoebi">Please select an Asoebi preference.</p>
+        </div>
+
+        <div class="form-divider">
+          <span></span><span class="form-divider-text">Notes & Comments</span><span></span>
+        </div>
+
+        <div class="field-group">
+          <label for="comments">6. Comments and/or questions (If you have any)</label> <textarea id="comments" placeholder="Your answer"></textarea>
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="btn-submit" id="submitBtn">Submit Settings</button>
+          <button type="submit" class="btn-submit" id="submitBtn">Submit RSVP</button>
         </div>
       </form>
     </div>
   </section>
 
+  <section class="notes-section">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div class="section-header">
+        <p class="section-eyebrow">Additional information</p> <h2 class="section-title">Helpful <em>Details</em></h2>
+      </div>
+      <div class="notes-grid">
+        <div class="note-card">
+          <p class="note-card-eyebrow">Flights from Abuja</p>
+          <p class="note-card-text">Enugu Air · Air Peace · United Nigeria Airline</p> </div>
+        <div class="note-card">
+          <p class="note-card-eyebrow">Flights from Lagos</p>
+          <p class="note-card-text">Rano Air · Air Peace · United Nigeria Airline · Arik Air</p> </div>
+        <div class="note-card">
+          <p class="note-card-eyebrow">Accommodation</p>
+          <p class="note-card-text">Details of available hotel and Airbnb accommodations will be shared once arrangements have been concluded.</p> </div>
+        <div class="note-card">
+          <p class="note-card-eyebrow">Adults-Only</p>
+          <p class="note-card-text">We respectfully request this to be an adults-only celebration. We kindly ask that no children attend.</p> </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-names">Evuesiri & Olarotimi</p>
+    <p class="footer-note">Warri, Delta State · October 2026</p>
+  </footer>
+
   <script>
     // Paste your Google Web App deployment link right here
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDC0UGTrfPhglQPoSn215reJa6w-5s51YHd1gj2Wozo9_fGrnm4zwTZqz7i5RkXYG_Pw/exec";
+    const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 
-    const form = document.getElementById('secondForm');
+    const form = document.getElementById('whiteWeddingForm');
     const submitBtn = document.getElementById('submitBtn');
     const successPanel = document.getElementById('successPanel');
 
@@ -310,12 +445,14 @@
 
       const name = document.getElementById('fullName').value.trim();
       const phone = document.getElementById('phone').value.trim();
-      const selection = getVal('selection');
+      const attendance = getVal('attendance');
+      const asoebi = getVal('asoebi');
 
       let valid = true;
       showErr('fullName', !name); if(!name) valid = false;
       showErr('phone', !phone); if(!phone) valid = false;
-      showErr('selection', !selection); if(!selection) valid = false;
+      showErr('attendance', !attendance); if(!attendance) valid = false;
+      showErr('asoebi', !asoebi); if(!asoebi) valid = false;
 
       if (!valid) return;
 
@@ -323,11 +460,13 @@
       submitBtn.innerHTML = '<span class="spinner"></span>Saving...';
 
       const payload = {
-        formType: "secondForm", // Essential flag to route to the correct sheet tab
+        formType: "secondForm", // Directs backend to drop this submission into your standalone tab
         fullName: name,
+        attendance: attendance,
         phone: phone,
-        selection: selection,
-        notes: document.getElementById('notes').value.trim(),
+        withSpouse: getVal('withSpouse') || 'Not specified',
+        asoebi: asoebi,
+        comments: document.getElementById('comments').value.trim(),
         timestamp: new Date().toLocaleString()
       };
 
@@ -343,7 +482,7 @@
       })
       .catch(err => {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Settings';
+        submitBtn.textContent = 'Submit RSVP';
         console.error(err);
       });
     });
