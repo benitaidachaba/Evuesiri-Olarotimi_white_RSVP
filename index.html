@@ -37,7 +37,7 @@
 
     .section-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
       max-width: 750px;
       margin-left: auto;
       margin-right: auto;
@@ -74,6 +74,22 @@
       letter-spacing: 0.02em;
       margin-top: 1.5rem;
       line-height: 1.8;
+    }
+
+    /* ── IMMACULATE HERO PHOTO CONTAINER ── */
+    .hero-image-container {
+      max-width: 720px;
+      margin: 0 auto 3.5rem;
+      box-shadow: 0 15px 35px rgba(61,50,40,0.06);
+      border: 1px solid rgba(139,111,58,0.15);
+      padding: 10px;
+      background: #FFFFFF;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .form-card {
@@ -317,8 +333,17 @@
 
   <section class="form-section">
     <div class="section-header">
-      <p class="section-eyebrow">Event Location: Warri, Delta State</p> <h2 class="section-title">Evuesiri & Olarotimi <br /><em>White Wedding RSVP</em></h2> <p class="section-subtitle">
-        Date: 3rd October, 2026<br /><br /> Kindly RSVP on or before <strong>31st May, 2026</strong>.<br /><br /> As this is an out-of-state wedding and a strictly by invitation event, your timely response will greatly assist us in planning properly and ensuring all our guests are well taken care of throughout the celebration. </p>
+      <p class="section-eyebrow">Event Location: Warri, Delta State</p> 
+      <h2 class="section-title">Evuesiri & Olarotimi <br /><em>White Wedding RSVP</em></h2> 
+      <p class="section-subtitle">
+        Date: 3rd October, 2026<br /><br /> 
+        Kindly RSVP on or before <strong>31st May, 2026</strong>.<br /><br /> 
+        As this is an out-of-state wedding and a strictly by invitation event, your timely response will greatly assist us in planning properly and ensuring all our guests are well taken care of throughout the celebration. 
+      </p>
+    </div>
+
+    <div class="hero-image-container">
+      <img src="WhatsApp Image 2026-05-21 at 10.35.42.jpeg" alt="Evuesiri & Olarotimi" />
     </div>
 
     <div class="form-card">
@@ -330,51 +355,64 @@
 
       <form id="whiteWeddingForm" novalidate>
         <div class="field-group">
-          <label for="fullName">1. Please enter your full name *</label> <input type="text" id="fullName" placeholder="Your answer" required />
+          <label for="fullName">1. Please enter your full name *</label> 
+          <input type="text" id="fullName" placeholder="Your answer" required />
           <p class="field-error" id="err-fullName">Please enter your name.</p>
         </div>
 
         <div class="field-group">
-          <label>2. Will you be attending? *</label> <div class="radio-group">
+          <label>2. Will you be attending? *</label> 
+          <div class="radio-group">
             <label class="radio-option">
-              <input type="radio" name="attendance" value="Absolutely! Let's celebrate" required /> <span class="radio-label">Absolutely! Let's celebrate</span>
+              <input type="radio" name="attendance" value="Absolutely! Let's celebrate" required /> 
+              <span class="radio-label">Absolutely! Let's celebrate</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="attendance" value="So sad to miss it" /> <span class="radio-label">So sad to miss it</span>
+              <input type="radio" name="attendance" value="So sad to miss it" /> 
+              <span class="radio-label">So sad to miss it</span>
             </label>
           </div>
           <p class="field-error" id="err-attendance">Please select your attendance status.</p>
         </div>
 
         <div class="field-group">
-          <label for="phone">3. If you will be attending, kindly provide your phone number *</label> <input type="tel" id="phone" placeholder="Your answer" required />
+          <label for="phone">3. If you will be attending, kindly provide your phone number *</label> 
+          <input type="tel" id="phone" placeholder="Your answer" required />
           <p class="field-error" id="err-phone">Please provide a phone number.</p>
         </div>
 
         <div class="field-group">
-          <label>4. *For Married Guest Only* Please would you be attending with your spouse?</label> <div class="radio-group">
+          <label>4. *For Married Guest Only* Please would you be attending with your spouse?</label> 
+          <div class="radio-group">
             <label class="radio-option">
-              <input type="radio" name="withSpouse" value="Yes, with my spouse" /> <span class="radio-label">Yes, with my spouse</span>
+              <input type="radio" name="withSpouse" value="Yes, with my spouse" /> 
+              <span class="radio-label">Yes, with my spouse</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="withSpouse" value="No, I'll be attending solo" /> <span class="radio-label">No, I'll be attending solo</span>
+              <input type="radio" name="withSpouse" value="No, I'll be attending solo" /> 
+              <span class="radio-label">No, I'll be attending solo</span>
             </label>
           </div>
         </div>
 
         <div class="field-group">
-          <label>5. Would you like to purchase Asoebi? *</label> <div class="radio-group">
+          <label>5. Would you like to purchase Asoebi? *</label> 
+          <div class="radio-group">
             <label class="radio-option">
-              <input type="radio" name="asoebi" value="Yes - Male asoebi only" required /> <span class="radio-label">Yes - Male asoebi only</span>
+              <input type="radio" name="asoebi" value="Yes - Male asoebi only" required /> 
+              <span class="radio-label">Yes - Male asoebi only</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="asoebi" value="Yes Female asoebi only" /> <span class="radio-label">Yes — Female asoebi only</span>
+              <input type="radio" name="asoebi" value="Yes Female asoebi only" /> 
+              <span class="radio-label">Yes — Female asoebi only</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="asoebi" value="Yes Both male and female asoebi" /> <span class="radio-label">Yes — Both male and female asoebi</span>
+              <input type="radio" name="asoebi" value="Yes Both male and female asoebi" /> 
+              <span class="radio-label">Yes — Both male and female asoebi</span>
             </label>
             <label class="radio-option">
-              <input type="radio" name="asoebi" value="No, thank you" /> <span class="radio-label">No, thank you</span>
+              <input type="radio" name="asoebi" value="No, thank you" /> 
+              <span class="radio-label">No, thank you</span>
             </label>
           </div>
           <p class="field-error" id="err-asoebi">Please select an Asoebi preference.</p>
@@ -385,7 +423,8 @@
         </div>
 
         <div class="field-group">
-          <label for="comments">6. Comments and/or questions (If you have any)</label> <textarea id="comments" placeholder="Your answer"></textarea>
+          <label for="comments">6. Comments and/or questions (If you have any)</label> 
+          <textarea id="comments" placeholder="Your answer"></textarea>
         </div>
 
         <div class="form-submit">
@@ -398,21 +437,26 @@
   <section class="notes-section">
     <div style="max-width: 720px; margin: 0 auto;">
       <div class="section-header">
-        <p class="section-eyebrow">Additional information</p> <h2 class="section-title">Helpful <em>Details</em></h2>
+        <p class="section-eyebrow">Additional information</p> 
+        <h2 class="section-title">Helpful <em>Details</em></h2>
       </div>
       <div class="notes-grid">
         <div class="note-card">
           <p class="note-card-eyebrow">Flights from Abuja</p>
-          <p class="note-card-text">Enugu Air · Air Peace · United Nigeria Airline</p> </div>
+          <p class="note-card-text">Enugu Air · Air Peace · United Nigeria Airline</p> 
+        </div>
         <div class="note-card">
           <p class="note-card-eyebrow">Flights from Lagos</p>
-          <p class="note-card-text">Rano Air · Air Peace · United Nigeria Airline · Arik Air</p> </div>
+          <p class="note-card-text">Rano Air · Air Peace · United Nigeria Airline · Arik Air</p> 
+        </div>
         <div class="note-card">
           <p class="note-card-eyebrow">Accommodation</p>
-          <p class="note-card-text">Details of available hotel and Airbnb accommodations will be shared once arrangements have been concluded.</p> </div>
+          <p class="note-card-text">Details of available hotel and Airbnb accommodations will be shared once arrangements have been concluded.</p> 
+        </div>
         <div class="note-card">
           <p class="note-card-eyebrow">Adults-Only</p>
-          <p class="note-card-text">We respectfully request this to be an adults-only celebration. We kindly ask that no children attend.</p> </div>
+          <p class="note-card-text">We respectfully request this to be an adults-only celebration. We kindly ask that no children attend.</p> 
+        </div>
       </div>
     </div>
   </section>
@@ -423,8 +467,7 @@
   </footer>
 
   <script>
-    // Paste your Google Web App deployment link right here
-    const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznomRRGs9Bdgdkw1tnnyDMW5veQyE_V__hpbNonOpcn5YcShlAQLiDTRal9DuhJqwY2A/exec";
 
     const form = document.getElementById('whiteWeddingForm');
     const submitBtn = document.getElementById('submitBtn');
@@ -460,7 +503,7 @@
       submitBtn.innerHTML = '<span class="spinner"></span>Saving...';
 
       const payload = {
-        formType: "secondForm", // Directs backend to drop this submission into your standalone tab
+        formType: "secondForm", 
         fullName: name,
         attendance: attendance,
         phone: phone,
