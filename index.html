@@ -233,6 +233,7 @@
     }
 
     .field-group input[type="text"],
+    .field-group input[type="email"],
     .field-group input[type="tel"] {
       width: 100%;
       background: transparent;
@@ -504,8 +505,15 @@
           <p class="field-error" id="err-phone">Please provide a phone number.</p>
         </div>
 
+        <!-- NEW EMAIL FIELD -->
         <div class="field-group">
-          <label>4. *For Married Guest Only* Please would you be attending with your spouse?</label> 
+          <label for="email">4. Kindly provide your email address *</label> 
+          <input type="email" id="email" placeholder="Your answer" required />
+          <p class="field-error" id="err-email">Please provide a valid email address.</p>
+        </div>
+
+        <div class="field-group">
+          <label>5. *For Married Guest Only* Please would you be attending with your spouse?</label> 
           <div class="radio-group">
             <label class="radio-option">
               <input type="radio" name="withSpouse" value="Yes, with my spouse" /> 
@@ -519,7 +527,7 @@
         </div>
 
         <div class="field-group">
-          <label>5. Would you like to purchase Asoebi? *</label> 
+          <label>6. Would you like to purchase Asoebi? *</label> 
           <div class="radio-group">
             <label class="radio-option">
               <input type="radio" name="asoebi" value="Yes - Male asoebi only" required /> 
@@ -546,7 +554,7 @@
         </div>
 
         <div class="field-group">
-          <label for="comments">6. Comments and/or questions (If you have any)</label> 
+          <label for="comments">7. Comments and/or questions (If you have any)</label> 
           <textarea id="comments" placeholder="Your answer"></textarea>
         </div>
 
@@ -590,7 +598,7 @@
   </footer>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznomRRGs9Bdgdkw1tnnyDMW5veQyE_V__hpbNonOpcn5YcShlAQLiDTRal9DuhJqwY2A/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwa7NQoSIgATKj7gPS1Q4PKsIHiQ7u-ydYsqcfY46BaIKmWnMfS_fcFrb0ZUA3k7Htf-A/exec";
 
     const form = document.getElementById('whiteWeddingForm');
     const submitBtn = document.getElementById('submitBtn');
@@ -606,17 +614,27 @@
       if (el) el.style.display = show ? 'block' : 'none';
     }
 
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const name = document.getElementById('fullName').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
       const attendance = getVal('attendance');
       const asoebi = getVal('asoebi');
 
       let valid = true;
       showErr('fullName', !name); if(!name) valid = false;
       showErr('phone', !phone); if(!phone) valid = false;
+      
+      const emailValid = email && validateEmail(email);
+      showErr('email', !emailValid); if(!emailValid) valid = false;
+      
       showErr('attendance', !attendance); if(!attendance) valid = false;
       showErr('asoebi', !asoebi); if(!asoebi) valid = false;
 
@@ -630,6 +648,7 @@
         fullName: name,
         attendance: attendance,
         phone: phone,
+        email: email,
         withSpouse: getVal('withSpouse') || 'Not specified',
         asoebi: asoebi,
         comments: document.getElementById('comments').value.trim(),
